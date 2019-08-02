@@ -1,24 +1,29 @@
 import React from 'react'
+import {Title, Date, Image, Description, ImgDesc, Container} from './Styling'
 
 export default function ImageCreator(props){
     console.log(props)
     return(
-        <div>
-            <div className="image-title">
-                <h1>{props.title}</h1>
-            </div>
 
-            <div className="image-date">
-                {props.date}
-            </div>
+        
+        <Container>
+                <Title>
+                    {props.title}
+                </Title>
 
-            <div className="image-loader">
-                <img src={props.imgUrl} alt={props.title}></img>
-            </div>
+                <Date>
+                    Date: {props.date}
+                </Date>
+            <ImgDesc>
+                <Image>
+                    <img src={props.imgUrl} alt={props.title}></img>
+                </Image>
 
-            <div className="image-description">
-                {props.explanation}
-            </div>
-        </div>
+                <Description>
+                    {props.explanation}
+                </Description>
+            </ImgDesc>
+        </Container>
     )
 }
+
